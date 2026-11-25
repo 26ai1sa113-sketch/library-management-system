@@ -103,6 +103,11 @@ books = st.session_state.books
 students = st.session_state.students
 records = st.session_state.records
 
+# Ensure old records also support timestamp fields
+for record in records:
+    while len(record) < 5:
+        record.append("")
+
 
 def find_book(book_id):
     return next((b for b in books if b[0] == book_id), None)
