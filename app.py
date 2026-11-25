@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+from zoneinfo import ZoneInfo
 import streamlit as st
 
 BOOKS_FILE = "books.txt"
@@ -18,7 +19,9 @@ def clean(value):
 
 
 def current_time():
-    return datetime.now().astimezone().strftime("%d-%m-%Y %I:%M:%S %p")
+    return datetime.now(ZoneInfo("Asia/Kolkata")).strftime(
+        "%d-%m-%Y %I:%M:%S %p"
+    )
 
 
 def load_file(filename, expected_columns):
