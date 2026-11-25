@@ -77,7 +77,14 @@ st.markdown("""
     .hero {padding: 1.5rem 1.7rem; border-radius: 18px; background: linear-gradient(120deg,#172554,#1e3a8a,#0f766e); color: white; margin-bottom: 1.3rem;}
     .hero h1 {color:white; margin:0; font-size:2.1rem;}
     .hero p {color:#dbeafe; margin:.45rem 0 0 0;}
-    div[data-testid="stMetric"] {background:#f8fafc; padding:14px; border:1px solid #e2e8f0; border-radius:12px;}
+    div[data-testid="stMetric"] {
+    background: #3B2F2F !important;
+    padding: 14px;
+    border: 1px solid #66514A;
+    border-radius: 12px;
+}
+div[data-testid="stMetricLabel"] {color: #E6D5C3 !important;}
+div[data-testid="stMetricValue"] {color: #FFFFFF !important;}
     .small-note {color:#64748b; font-size:.9rem;}
 </style>
 """, unsafe_allow_html=True)
