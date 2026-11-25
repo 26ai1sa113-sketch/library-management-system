@@ -188,6 +188,7 @@ elif menu == "Issue Book":
         with st.form("issue_book_form"):
             roll = st.selectbox("Select student", options=[s[0] for s in students], format_func=lambda x: f"{x} — {find_student(x)[1]}")
             book_id = st.selectbox("Select book", options=[b[0] for b in books], format_func=lambda x: f"{x} — {find_book(x)[1]} ({find_book(x)[3]} available)")
+            st.info("One transaction issues 1 copy of the selected book.")
             submitted = st.form_submit_button("Issue Book", type="primary")
         if submitted:
             book = find_book(book_id)
@@ -200,7 +201,7 @@ elif menu == "Issue Book":
                 records.append([roll, book_id, "Issued"])
                 save_file(BOOKS_FILE, books)
                 save_file(RECORDS_FILE, records)
-                st.success("Book issued successfully! Available stock has been updated.")
+                st.success("1 copy issued successfully! Available stock has been updated.")
 
 elif menu == "Return Book":
     st.subheader("Return a Book")
